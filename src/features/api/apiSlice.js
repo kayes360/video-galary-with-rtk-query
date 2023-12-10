@@ -1,14 +1,24 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+
 export const apiSlice = createApi({
-  reducerPath: {},
+
+  reducerPath: 'api',
+
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:9000",
+    baseUrl: "http://192.168.31.120:9000",
   }),
+
   endpoints: (builder) => ({
+
     getVideos: builder.query({
-        query: () =>  '/videos',
-    })
+      query: () => "/videos",
+    }),
+
+    getVideo: builder.query({
+      query: (videoId) => `/videos/${videoId}`
+    }),
+
   }),
 });
 
-export const {useGetVideosQuery} = apiSlice ;
+export const { useGetVideosQuery, useGetVideoQuery} = apiSlice;

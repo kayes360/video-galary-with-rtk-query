@@ -7,7 +7,6 @@ export default function Videos() {
   const { data: videos, isLoading, isError } = useGetVideosQuery();
 
   //decide what to render
-
   let content = null;
 
   if (isLoading) {
