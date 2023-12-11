@@ -4,7 +4,7 @@ import Error from "../ui/Error";
 import { useGetVideosQuery } from "../../features/api/apiSlice";
 
 export default function Videos() {
-  const { data: videos, isLoading, isError } = useGetVideosQuery();
+  const { data: videos, isLoading, isError, refetch } = useGetVideosQuery();
 
   //decide what to render
   let content = null;
@@ -22,7 +22,7 @@ export default function Videos() {
   }
 
   if (!isLoading && !isError && videos?.length > 0) {
-    content = videos.map(video => <Video key={video.id} video={video}/>);
+    content = videos.map(video => <Video key={video.id} video={video} refetch={refetch}/>);
   }
 
   return (

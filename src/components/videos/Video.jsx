@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import authorImage from "../../../public/icon.png";
 
-export default function Video({ video }) {
+export default function Video({ video, refetch }) {
   const {
     id,
     title,
@@ -21,7 +21,7 @@ export default function Video({ video }) {
             <img src={thumbnail} className="w-full h-auto" alt={title} />
           </Link>
 
-          <p className="absolute right-2 bottom-2 bg-gray-900 text-gray-100 text-xs px-1 py">
+          <p className="absolute right-2 bottom-2 bg-gray-900 text-gray-100 text-xs px-1 py" onClick={refetch}>
             {duration}
           </p>
         </div>

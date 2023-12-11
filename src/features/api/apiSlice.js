@@ -12,14 +12,17 @@ export const apiSlice = createApi({
 
     getVideos: builder.query({
       query: () => "/videos",
+      keepUnusedDataFor: 5
     }),
 
     getVideo: builder.query({
-      query: (videoId) => `/videos/${videoId}`
+      query: (videoId) => `/videos/${videoId}`,
+      keepUnusedDataFor: 5
     }),
 
     getRelatedVideos: builder.query({
-      query: (generatedQueryStringIdExcluded) => `/videos?${generatedQueryStringIdExcluded}`
+      query: (generatedQueryStringIdExcluded) => `/videos?${generatedQueryStringIdExcluded}`,
+      keepUnusedDataFor: 5
 
     }),
 

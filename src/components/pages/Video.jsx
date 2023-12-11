@@ -10,10 +10,9 @@ import Error from "../ui/Error";
 
 export default function Video() {
   const { videoId } = useParams();
-  const { data: video, isLoading, isError } = useGetVideoQuery(videoId);
-
-
- 
+  const { data: video, isLoading, isError  } = useGetVideoQuery(videoId, {
+    refetchOnMountOrArgChange: 5
+  });
 
   //decide what to render
   let content = null;
