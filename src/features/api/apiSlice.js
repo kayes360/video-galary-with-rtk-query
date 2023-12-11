@@ -18,7 +18,12 @@ export const apiSlice = createApi({
       query: (videoId) => `/videos/${videoId}`
     }),
 
+    getRelatedVideos: builder.query({
+      query: (generatedQueryStringIdExcluded) => `/videos?${generatedQueryStringIdExcluded}`
+
+    }),
+
   }),
 });
 
-export const { useGetVideosQuery, useGetVideoQuery} = apiSlice;
+export const { useGetVideosQuery, useGetVideoQuery, useGetRelatedVideosQuery} = apiSlice;

@@ -11,6 +11,8 @@ import Error from "../ui/Error";
 export default function Video() {
   const { videoId } = useParams();
   const { data: video, isLoading, isError } = useGetVideoQuery(videoId);
+
+
  
 
   //decide what to render
@@ -47,7 +49,7 @@ export default function Video() {
           </div>
 
           {video?.id ? (
-            <RelatedVideos />
+            <RelatedVideos title={video.title} videoId={video.id}/>
           ) : isLoading ? (
             <>
               <RelatedVideoLoader />

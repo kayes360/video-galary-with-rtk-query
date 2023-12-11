@@ -3,7 +3,7 @@ import logo from "/Logo.gif";
 
 export default function Navigation() {
     return (
-        <nav className="bg-zin-50 shadow-md">
+        <nav className="bg-[#fcfcfc] shadow-md">
             <div className="max-w-7xl mx-auto px-5 lg:px-0 flex justify-between py-3 items-center">
                 <Link to="/">
                     <img className="h-16" src={logo} alt="Learn with Sumit" />
